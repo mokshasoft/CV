@@ -1,0 +1,188 @@
+%%% LaTeX Template: Two column article
+%%%
+%%% Source: http://www.howtotex.com/
+%%% Feel free to distribute this template, but please keep to referal to http://www.howtotex.com/ here.
+%%% Date: February 2011
+
+%%% Preamble
+
+% KOMA-article class
+\documentclass[ DIV=calc,%
+                paper=a4,%
+                fontsize=11pt,%
+                twocolumn]{scrartcl}
+
+% Package to create dummy text
+\usepackage{lipsum}
+% UTF-8
+\usepackage[utf8]{inputenc}
+% English language/hyphenation
+\usepackage[english]{babel}
+% Better typography
+\usepackage[protrusion=true,expansion=true]{microtype}
+% Math packages
+\usepackage{amsmath,amsfonts,amsthm}
+% Enable pdflatex
+\usepackage[pdftex]{graphicx}
+% Enabling colors by their 'svgnames'
+\usepackage[svgnames]{xcolor}
+% Custom captions under/above floats
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}
+% Converts .eps to .pdf
+\usepackage{epstopdf}
+% Subfigures
+\usepackage{subfig}
+% Nicer tables
+\usepackage{booktabs}
+% Custom fontsizes
+\usepackage{fix-cm}
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}          % Custom sectioning (see below)
+\allsectionsfont{             % Change font of al section commands
+    \usefont{OT1}{phv}{b}{n}  % bch-b-n: CharterBT-Bold font
+}
+
+\sectionfont{                 % Change font of \section command
+    \usefont{OT1}{phv}{b}{n}  % bch-b-n: CharterBT-Bold font
+}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{complementary}{rgb}{0.66, 0.46, 0.36}
+
+%%% Headers and footers
+\usepackage{fancyhdr}         % Needed to define custom headers/footers
+\pagestyle{fancy}             % Enabling the custom headers/footers
+\usepackage{lastpage}
+
+% Header (empty)
+\lhead{}
+\chead{}
+\rhead{}
+
+% Footer
+\lfoot{\footnotesize \texttt{CV} \textbullet ~Jonas Claeson, jonasclaeson@yahoo.se, +46 707 31 06 27}
+\cfoot{}
+\rfoot{\footnotesize 2014-08-09}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+%%% Creating an initial of the very first character of the content
+\usepackage{lettrine}
+\newcommand{\initial}[1]{
+    \lettrine[lines=3,lhang=0.3,nindent=0em]{
+                     {\textsf{#1}}}{}}
+
+%%% Title, author and date metadata
+% For custom titles
+\usepackage{titling}
+
+% Creating a horizontal rule
+\newcommand{\HorRule}{\color{complementary}\rule{\linewidth}{2pt}}
+
+% Title
+\pretitle{\vspace{-30pt}
+    \begin{flushleft}
+    \HorRule
+    \fontsize{50}{50}
+    \usefont{OT1}{phv}{b}{n}
+    \color{airforceblue}
+    \selectfont
+}
+\title{the go-to guy}
+\posttitle{
+    \par
+    \end{flushleft}
+    \vskip 0.5em
+}
+
+\preauthor{
+    \begin{flushleft}
+    \large
+    \lineskip 0.5em
+    \usefont{OT1}{phv}{b}{sl}
+    \color{airforceblue}
+}
+\author{Jonas Claeson, }
+\postauthor{
+    \footnotesize
+    \usefont{OT1}{phv}{m}{sl}
+    \color{Black}
+    Let me and my 10+ years in embedded systems and open-source help you!
+    \par
+    \end{flushleft}
+    \HorRule
+}
+
+\date{}
+
+%%% Begin document
+\begin{document}
+\maketitle
+% Enabling the custom headers/footers for the first page
+\thispagestyle{fancy}
+\input{tex/intro}
+
+\section*{This is me}
+
+\input{tex/cover_letter}
+
+\section*{I have worked with...}
+
+\begin{description}
+\input{tex/p11_somc_security2}
+\input{tex/p10_somc_security}
+\input{tex/p9_semc_android_multimedia}
+\input{tex/p8_tastybits}
+\input{tex/p7_semc_android_multimedia}
+\input{tex/p6_semc_ose_multimedia}
+\input{tex/p5_semc_messaging}
+\input{tex/p4_mobile_labs}
+\input{tex/p3_ericsson}
+\input{tex/p2_autoliv}
+\input{tex/p1_electronics_systems}
+\end{description}
+
+\section*{My knowledge in short}
+
+\begin{description}
+    \item[Platforms:] Linux, Android, iOS, Mac OS X, OSE
+    \item[Programming Languages:] C/C++, Java, scripting, Objective-C, SQL
+    \item[Tools:] git, gdb, strace, crash, repo, Lauterbach, Coverity, GNU/linux command line tools, and all other open-source tools that I need to get the job done!
+    \item[Roles:] architect, developer, troubleshooter
+\end{description}
+
+\section*{Educations}
+
+\subsection*{Basic}
+
+\begin{description}
+    \item[1997-2003] M.Sc. in Computer Science and Engineering – Embedded Systems, Linköping University
+\end{description}
+
+\subsection*{Extra}
+
+\begin{description}
+    \item[2014] R Programming, coursera
+    \item[2013] DEF CON hacker conference
+    \item[2012] Internet security - attacks, firewalls and cryptography, Informator
+    \item[2009] Android for Platform Developers, Sony Ericsson
+    \item[2007] Trace32/Lauterbach debugging, Netville
+    \item[2006] Embedded Systems Basic Course, Netville
+    \item[2003] Digital Systems Testing and Design for Testability, SYDIC
+\end{description}
+
+\section*{Publications}
+
+\begin{description}
+    \item[2003] A GALS Based 16-Point Pipeline FFT Core, Proc IEEE NorChip Conf. Riga
+\end{description}
+
+\section*{Patents}
+
+\begin{description}
+    \item[2008] Embedded tags in a media signal, US 20090294538 A1
+    \item[2007] Systems and methods for ubiquitous charging, US 7973513 B2
+\end{description}
+
+\end{document}
