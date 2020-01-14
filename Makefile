@@ -4,6 +4,7 @@
 #   dnf install texlive-lastpage
 #   dnf install texlive-lettrine
 #   dnf install texlive-titling
+#   dnf install texlive-minifp
 
 OUT=out
 FILE=cv.tex
